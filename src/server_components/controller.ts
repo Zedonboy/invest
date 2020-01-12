@@ -303,5 +303,5 @@ export function getUser(req : Request, res : Response){
 export function redirect(res : Response,url : string){
   res.status(200).json({
     _redirectUrl : url
-  }).se
+  })
 }

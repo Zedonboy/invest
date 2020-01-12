@@ -282,7 +282,7 @@ exports.getUser = getUser;
 function redirect(res, url) {
     res.status(200).json({
         _redirectUrl: url
-    }).se;
+    });
 }
 exports.redirect = redirect;
 //# sourceMappingURL=controller.js.map
