@@ -1,0 +1,94 @@
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-radius: 0.25rem;
+}
+.alert-info {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
+.alert-success {
+    background-color: #a1e82c;
+    color: #d1ecf1;
+}
+.alert-danger {
+    background-color: #fc727a;
+    color: #d1ecf1;
+}
+
+
+@media screen and (min-width: 978px) {
+.panel {
+    max-width: 45%;
+    min-width: 45%;
+    height: 330px;
+}
+}
+@media screen and (max-width: 900px) {
+.panel {
+    width: 85%;
+    height: 70%;
+}
+}
+.panel {
+  border-radius: 10px;
+  border: thin solid #ededed;
+}
+.full-width {
+  width: 80%;
+}
+.space-around {
+  justify-content: space-around;
+}
+.input {
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-width: medium;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 20px;
+}
+.bg-color-transparent {
+  background-color: transparent;
+}
+.color-ededed {
+  color: #ededed;
+}
+:focus {
+  border-color: #a2b70d;
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+.horizontal-center {
+  justify-content: center;
+}
+.vertical-center {
+  align-items: center;
+}
+.column {
+  flex-direction: column;
+}
+.flex {
+  display: flex;
+}
+.margin-10 {
+  margin: 10px;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+
+/*# sourceMappingURL=app.css.map*/

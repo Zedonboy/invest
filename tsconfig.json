@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "declaration": false,
+        "module": "commonjs",
+        "target": "es6",
+        "experimentalDecorators": true,
+        "esModuleInterop" : true,
+    },
+    "include" : ["src/**/*"],
+    "exclude" : ["test", "dist", "src/client"]
+}
