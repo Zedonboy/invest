@@ -107,7 +107,7 @@
               <em>Chief Executive Officer</em>
             </div>
             <figure>
-              <a href="#"><img src="images/demo/320x220.png" alt=""/></a>
+              <a href="#"><img src="images/demo/1.jpg" alt=""/></a>
             </figure>
             <div class="txtwrap">
               <p>
@@ -133,7 +133,7 @@
               <em>Investment Manager</em>
             </div>
             <figure>
-              <a href="#"><img src="images/demo/320x220.png" alt=""/></a>
+              <a href="#"><img src="images/demo/2.jpg" alt=""/></a>
             </figure>
             <div class="txtwrap">
               <p>
@@ -159,7 +159,7 @@
               <em>CUSTOMER RELATIONS MANAGER</em>
             </div>
             <figure>
-              <a href="#"><img src="images/demo/320x220.png" alt=""/></a>
+              <a href="#"><img src="images/demo/3.jpg" alt=""/></a>
             </figure>
             <div class="txtwrap">
               <p>

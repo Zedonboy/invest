@@ -19,8 +19,8 @@ export function Authenticated(req : Request, res : Response, next : () => void){
     if(req.session && req.session.userId){
         next()
     } else {
-        redirect(res, "/#/login")
-        //res.redirect("/#/login")
+        //redirect(res, "/#/login")
+        res.redirect("/#/login")
         //returnError(res, 401, "route is not authorised")
     }
 }

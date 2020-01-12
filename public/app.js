@@ -3295,9 +3295,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("figure", [
               _c("a", { attrs: { href: "#" } }, [
-                _c("img", {
-                  attrs: { src: "images/demo/320x220.png", alt: "" }
-                })
+                _c("img", { attrs: { src: "images/demo/1.jpg", alt: "" } })
               ])
             ]),
             _vm._v(" "),
@@ -3338,9 +3336,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("figure", [
               _c("a", { attrs: { href: "#" } }, [
-                _c("img", {
-                  attrs: { src: "images/demo/320x220.png", alt: "" }
-                })
+                _c("img", { attrs: { src: "images/demo/2.jpg", alt: "" } })
               ])
             ]),
             _vm._v(" "),
@@ -3379,9 +3375,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("figure", [
               _c("a", { attrs: { href: "#" } }, [
-                _c("img", {
-                  attrs: { src: "images/demo/320x220.png", alt: "" }
-                })
+                _c("img", { attrs: { src: "images/demo/3.jpg", alt: "" } })
               ])
             ]),
             _vm._v(" "),

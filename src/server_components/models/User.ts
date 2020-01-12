@@ -1,3 +1,4 @@
+//@ts-nocheck
 import {Schema, model, MongooseDocument } from "mongoose";
 
 let schema = new Schema({
@@ -5,7 +6,7 @@ let schema = new Schema({
         type : Schema.Types.String,
         unique : true
     },
-    investMent : Schema.Types.Number,
+    investment : Schema.Types.Number,
     password : Schema.Types.String,
     //transactions : Schema.Types.DocumentArray,
     isAdmin : {
@@ -25,7 +26,7 @@ let schema = new Schema({
 export const UserDBModel = model('Users', schema)
 export class UserData{
     email : string
-    investMent : number[]
+    investment : number
     deposited : number
     transactions : []
     name : string
@@ -36,6 +37,9 @@ export class UserData{
         if(mongooseDoc){
             //@ts-ignore
             this.email = mongooseDoc.email
+            this.isAdmin = mongooseDoc.isAdmin
+            this.investment = mongooseDoc.investment
+            this.deposited = mongooseDoc.depositedAmt
         }
     }
 }

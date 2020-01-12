@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const validator_1 = __importDefault(require("validator"));
 const utils_1 = require("./utils");
 const User_1 = require("./models/User");
-const controller_1 = require("./controller");
 function loginMiddleware(req, res, next) {
     validator_1.default.trim(req.body.email);
     validator_1.default.trim(req.body.password);
@@ -24,8 +23,8 @@ function Authenticated(req, res, next) {
         next();
     }
     else {
-        controller_1.redirect(res, "/#/login");
-        //res.redirect("/#/login")
+        //redirect(res, "/#/login")
+        res.redirect("/#/login");
         //returnError(res, 401, "route is not authorised")
     }
 }
