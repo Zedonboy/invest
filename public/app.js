@@ -1862,6 +1862,17 @@ module.exports = function isBuffer (obj) {
 
 /***/ }),
 
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js?!./src/client/homepage_components/Home.vue?vue&type=style&index=0&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib??vue-loader-options!./src/client/homepage_components/Home.vue?vue&type=style&index=0&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js?!./src/client/homepage_components/Login.vue?vue&type=style&index=0&lang=css&":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib??vue-loader-options!./src/client/homepage_components/Login.vue?vue&type=style&index=0&lang=css& ***!
@@ -2726,6 +2737,149 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2841,6 +2995,65 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/index.js?!./src/client/homepage_components/Nav.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./src/client/homepage_components/Nav.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data () {
+    return {
+      url : null
+    }
+  },
+
+  watch : {
+    url (n, oldV){
+      this.$router.push(n)
+    }
+  }
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/index.js?!./src/client/homepage_components/Register.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib??vue-loader-options!./src/client/homepage_components/Register.vue?vue&type=script&lang=js& ***!
@@ -2896,6 +3109,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2906,12 +3135,16 @@ __webpack_require__.r(__webpack_exports__);
   data () {
     return {
       email : "",
-      password : ""
+      password : "",
+      user : {
+        phone : "",
+        name : ""
+      }
     }
   },
   methods : {
     submitForm () {
-      _utils_Api__WEBPACK_IMPORTED_MODULE_1___default.a.register(this.email, this.password).then(resp => {
+      _utils_Api__WEBPACK_IMPORTED_MODULE_1___default.a.register(this.email, this.password, this.user).then(resp => {
         if(resp.status == 200){
             window.location.href = resp.data._redirectUrl
             return
@@ -3015,8 +3248,6 @@ var staticRenderFns = [
             _c("h6", { staticClass: "heading" }, [_vm._v("Contact Us")]),
             _vm._v(" "),
             _c("ul", { staticClass: "nospace btmspace-30 linklist contact" }, [
-              _c("li", [_c("i", { staticClass: "fa fa-map-marker" })]),
-              _vm._v(" "),
               _c("li", [
                 _c("i", { staticClass: "fa fa-phone" }),
                 _vm._v(" (+44) 772-350-6339")
@@ -3143,11 +3374,13 @@ var render = function() {
       _vm._v(" "),
       _vm._m(4),
       _vm._v(" "),
-      _c("Footer"),
-      _vm._v(" "),
       _vm._m(5),
       _vm._v(" "),
-      _vm._m(6)
+      _c("Footer"),
+      _vm._v(" "),
+      _vm._m(6),
+      _vm._v(" "),
+      _vm._m(7)
     ],
     1
   )
@@ -3173,7 +3406,7 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("footer", [
-            _c("a", { staticClass: "btn", attrs: { href: "#" } }, [
+            _c("a", { staticClass: "btn", attrs: { href: "/#/register" } }, [
               _vm._v("Get Started")
             ])
           ])
@@ -3271,7 +3504,173 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
+        _c("section", { attrs: { id: "steps" } }, [
+          _c("ul", { staticClass: "nospace group services" }, [
+            _c("h6", { staticClass: "heading" }, [
+              _vm._v("How to get Started")
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "one_third first" }, [
+              _c("article", [
+                _c("h6", { staticClass: "heading font-x1" }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Step 1")])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("Sign up "),
+                  _c("a", { attrs: { href: "#/register" } }, [_vm._v("here")])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "one_third" }, [
+              _c("article", [
+                _c("h6", { staticClass: "heading font-x1" }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Step 2")])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("\n                Deposit Amount\n              ")
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "one_third" }, [
+              _c("article", [
+                _c("h6", { staticClass: "heading font-x1" }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Step 3")])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                Activate An Investment.\n              "
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
         _c("div", { staticClass: "clear" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", [
+      _c("div", { staticClass: "wrapper row2 group" }, [
+        _c("div", { staticClass: "one_third first" }, [
+          _c("figure", { staticClass: "padding-50" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("img", {
+                staticClass: "circular",
+                attrs: {
+                  src:
+                    "https://wealthassetfinancing.com/css/image/cannabis%20growers.jpg",
+                  alt: ""
+                }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "two_third" }, [
+          _c("h5", [_vm._v("\n          Cannabis Investment\n        ")]),
+          _vm._v(" "),
+          _c("p", { staticClass: "aboutText" }, [
+            _vm._v(
+              "\n          With the development and growth of the marijuana industry, investing\n          in marijuana has become a more stable venture for many people. In\n          fact, many states have started to legalize both the recreational and\n          medicinal use of this herb. Investing in marijuana stocks at an\n          early stage allows you to maximize the returns you may get from your\n          asset. Now, the challenge is determining whether investing in the\n          marijuana industry will increase your asset portfolio’s worth in the\n          long run. The first consideration for any investment is the market\n          conditions. Short-term gains over the last year offer an idea of\n          potential trends in a booming industry. Marijuana stocks, including\n          marijuana penny stocks, provide limited information because the\n          substance has been legal for only a short time. For short-term\n          investment tactics, investing in medical marijuana stocks shows a\n          positive trend. In 2017, the stocks grew by roughly 90%. The high\n          returns suggest such stocks may help with your portfolio growth.\n          Factors such as growing interest rates and cost of production all\n          make a huge impact on stock prices. In addition, with more and more\n          people investing in the marijuana industry, stock shares may\n          continue to rise both in the short and long-term horizon.\n        "
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "wrapper row2 flex wrapp" }, [
+        _c("div", { staticClass: "col-md-8 col-sm-12" }, [
+          _c("div", { staticClass: "aboutText" }, [
+            _c("h5", [_vm._v("Growth in the Industry")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n            Growth in the marijuana business is another factor that can\n            benefit your portfolio. Investing in medical marijuana could be\n            beneficial due to its potential growth. States are legalizing\n            medical marijuana and allowing people to use the substance with a\n            prescription. Similarly, investing in recreational marijuana may\n            also be an option as more and more states are now allowing people\n            to use it aside from medicinal purposes. As more states legalize\n            marijuana, the industry will continue to grow. This potential\n            growth is beneficial to investors who have started investing in\n            legal marijuana. The market is not yet saturated, and there’s\n            plenty of room for stock shares to skyrocket.\n          "
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 col-sm-12" }, [
+          _c("figure", { staticClass: "padding-50 figure" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("img", {
+                staticClass: "circular",
+                attrs: {
+                  src:
+                    "https://wealthassetfinancing.com/css/image/cannabis-money.jpg",
+                  alt: ""
+                }
+              })
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "wrapper row2 group" }, [
+        _c("div", { staticClass: "one_third first" }, [
+          _c("figure", { staticClass: "padding-50" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("img", {
+                staticClass: "circular",
+                attrs: {
+                  src:
+                    "https://wealthassetfinancing.com/css/image/Stock-investment.png",
+                  alt: ""
+                }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "two_third" }, [
+          _c("div", { staticClass: "aboutText" }, [
+            _c("h5", [_vm._v("Stock and CFD Trading")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n            Both stock trading and stock CFD trading are ways for investors to\n            trade the movements of the stock market. However, they differ in\n            fundamental ways. Traders who invest in stocks directly own the\n            underlying stock, which is a portion of the company they invest\n            in. In contrast, CFD traders buy a contract between themselves and\n            a broker which speculates on a stock’s entry and exit value. Stock\n            CFD traders aim to profit from the movement of an asset without\n            owning it – stock traders aim to profit from the value of the\n            share they own over time.\n          "
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "wrapper row2 flex wrapp" }, [
+        _c("div", { staticClass: "col-md-8 col-sm-12" }, [
+          _c("div", { staticClass: "aboutText" }, [
+            _c("h5", [_vm._v("Cryptocurrency Trading and Investment")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n            Cryptocurrencies are an extremely volatile market. In July 2010,\n            the value of Bitcoin grew 900% in the space of five days. In a\n            one-year time span from December 2016 to December 2017, Bitcoin\n            went from $750 to a staggering $10,000! This means that anybody\n            who invested $10,000 in December 2016, would get back a\n            mind-numbing $133,333 in exactly 365 days. In fact, the total\n            market cap of cryptocurrencies went all the way upto an astounding\n            $500 billion by end of 2017.\n          "
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 col-sm-12" }, [
+          _c("figure", { staticClass: "padding-50 figure" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("img", {
+                staticClass: "circular",
+                attrs: {
+                  src: "https://wealthassetfinancing.com/css/image/btc.jpg",
+                  alt: ""
+                }
+              })
+            ])
+          ])
+        ])
       ])
     ])
   },
@@ -3473,9 +3872,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "wrapper row3" }, [
       _c("section", { staticClass: "hoc container clear" }, [
         _c("div", { staticClass: "sectiontitle" }, [
-          _c("h6", { staticClass: "heading" }, [_vm._v("Available Plans")]),
-          _vm._v(" "),
-          _c("p", [_vm._v("Nisl vitae pulvinar nulla augue non leo in sed.")])
+          _c("h6", { staticClass: "heading" }, [_vm._v("Available Plans")])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "group excerpts" }, [
@@ -3752,7 +4149,47 @@ var render = function() {
             )
           ],
           1
-        )
+        ),
+        _vm._v(" "),
+        _c("form", { attrs: { action: "#" } }, [
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.url,
+                  expression: "url"
+                }
+              ],
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.url = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { value: "/" } }, [_vm._v("Home")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "/register" } }, [
+                _vm._v("Sign Up")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "/login" } }, [_vm._v("Sign In ")])
+            ]
+          )
+        ])
       ])
     ])
   ])
@@ -3831,6 +4268,34 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
+                    value: _vm.user.name,
+                    expression: "user.name"
+                  }
+                ],
+                staticClass:
+                  "input full-width color-ededed bg-color-transparent",
+                attrs: {
+                  autofocus: "",
+                  required: "",
+                  placeholder: "name",
+                  type: "text"
+                },
+                domProps: { value: _vm.user.name },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.user, "name", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
                     value: _vm.email,
                     expression: "email"
                   }
@@ -3877,6 +4342,29 @@ var render = function() {
                       return
                     }
                     _vm.password = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.user.phone,
+                    expression: "user.phone"
+                  }
+                ],
+                staticClass:
+                  "input full-width color-ededed bg-color-transparent",
+                attrs: { required: "", placeholder: "Phone", type: "tel" },
+                domProps: { value: _vm.user.phone },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.user, "phone", $event.target.value)
                   }
                 }
               }),
@@ -12719,7 +13207,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Home_vue_vue_type_template_id_00b5e4fc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home.vue?vue&type=template&id=00b5e4fc& */ "./src/client/homepage_components/Home.vue?vue&type=template&id=00b5e4fc&");
 /* harmony import */ var _Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Home.vue?vue&type=script&lang=js& */ "./src/client/homepage_components/Home.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _Home_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Home.vue?vue&type=style&index=0&lang=css& */ "./src/client/homepage_components/Home.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -12727,7 +13217,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Home_vue_vue_type_template_id_00b5e4fc___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Home_vue_vue_type_template_id_00b5e4fc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -12756,6 +13246,22 @@ component.options.__file = "src/client/homepage_components/Home.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=script&lang=js& */ "./node_modules/vue-loader/lib/index.js?!./src/client/homepage_components/Home.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/client/homepage_components/Home.vue?vue&type=style&index=0&lang=css&":
+/*!**********************************************************************************!*\
+  !*** ./src/client/homepage_components/Home.vue?vue&type=style&index=0&lang=css& ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=style&index=0&lang=css& */ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js?!./src/client/homepage_components/Home.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -12874,15 +13380,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Nav_vue_vue_type_template_id_69e27160___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Nav.vue?vue&type=template&id=69e27160& */ "./src/client/homepage_components/Nav.vue?vue&type=template&id=69e27160&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Nav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Nav.vue?vue&type=script&lang=js& */ "./src/client/homepage_components/Nav.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Nav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Nav_vue_vue_type_template_id_69e27160___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Nav_vue_vue_type_template_id_69e27160___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -12896,6 +13404,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "src/client/homepage_components/Nav.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./src/client/homepage_components/Nav.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./src/client/homepage_components/Nav.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_index_js_vue_loader_options_Nav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib??vue-loader-options!./Nav.vue?vue&type=script&lang=js& */ "./node_modules/vue-loader/lib/index.js?!./src/client/homepage_components/Nav.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_loader_lib_index_js_vue_loader_options_Nav_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -13010,12 +13532,9 @@ class InvestAPI {
             }
         });
     }
-    static login(email, pwd) {
+    static login(email, pwd, user) {
         this.checkToken();
-        return this.instance.post("/api/v1/login", {
-            email: email,
-            password: pwd
-        });
+        return this.instance.post("/api/v1/login", Object.assign({ email: email, password: pwd }, user));
     }
     static register(email, password) {
         this.checkToken();

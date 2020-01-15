@@ -19,6 +19,14 @@
           @submit.prevent="submitForm"
           class="container flex column space-around vertical-center"
         >
+        <input
+            autofocus
+            v-model="user.name"
+            required
+            class="input full-width color-ededed bg-color-transparent"
+            placeholder="name"
+            type="text"
+          />
           <input
             autofocus
             v-model="email"
@@ -33,6 +41,14 @@
             class="input full-width color-ededed bg-color-transparent"
             placeholder="Password"
             type="password"
+          />
+           
+          <input
+            v-model="user.phone"
+            required
+            class="input full-width color-ededed bg-color-transparent"
+            placeholder="Phone"
+            type="tel"
           />
           <button type="submit" class="btn margin-10">Sign Up</button>
         </form>
@@ -50,12 +66,16 @@ export default {
   data () {
     return {
       email : "",
-      password : ""
+      password : "",
+      user : {
+        phone : "",
+        name : ""
+      }
     }
   },
   methods : {
     submitForm () {
-      InvestAPI.register(this.email, this.password).then(resp => {
+      InvestAPI.register(this.email, this.password, this.user).then(resp => {
         if(resp.status == 200){
             window.location.href = resp.data._redirectUrl
             return

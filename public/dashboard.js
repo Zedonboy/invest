@@ -103,17 +103,19 @@ const randomstring_1 = __importDefault(__webpack_require__(/*! randomstring */ "
 exports.sessionSecret = randomstring_1.default.generate();
 exports.DB_Uri = "mongodb://localhost:27017/investApp";
 exports.Mail = {
-    host: "",
-    port: 0,
-    secured: false,
+    host: "n3plcpnl0273.prod.ams3.secureserver.net",
+    port: 465,
+    secured: true,
     auth: {
-        user: "",
-        pass: ""
+        user: "hello@wealthassetsfinancing.com",
+        pass: "9$d-SnzNMZm("
     }
 };
 exports.adminEmail = "";
 exports.adminWalletAddress = "33KyXr257rXAFsLpy6Z3uKBHh4BAq1oaih";
 exports.baseUrl = "http://localhost:3000";
+exports.ceoEmail = "Briansmith@wealthassetsfinancing.com";
+exports.ceoEmailPass = "f4tZ2Zd9r59aMP5";
 
 
 /***/ }),
@@ -25686,17 +25688,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data() {
-    return {
-      user: this.$store.state.user
-    };
-  },
-
   computed : {
     newAmount (){
-      if(!this.user && !this.user.investAmt) return 0
-      let investmnt = this.user.investAmt
-      let planId = this.user.investMent
+      if(!this.user.investedAmt) return 0
+      let investmnt = this.user.investedAmt
+      let planId = this.user.investment
       let plan = this.$store.state.mainPlans[planId]
       let roi = plan.interest / 100
       let today = new Date()
@@ -25707,6 +25703,10 @@ __webpack_require__.r(__webpack_exports__);
         let multiples = Math.floor(daysElapse / parseInt(plan.duration))
         return investmnt + investmnt * roi * multiples
       } else return investmnt
+    },
+
+    user () {
+      return this.$store.state.user
     }
   }
 });
@@ -26300,7 +26300,7 @@ var render = function() {
               _c("h4", { staticClass: "title" }, [
                 _vm._v(
                   "\n              $" +
-                    _vm._s(this.user ? this.user.depositedAmt : "0") +
+                    _vm._s(this.user.deposited ? this.user.deposited : 0) +
                     "\n            "
                 )
               ]),
@@ -26333,7 +26333,8 @@ var render = function() {
                 _vm._v(
                   "$" +
                     _vm._s(
-                      _vm.newAmount + (this.user ? this.user.depositedAmt : 0)
+                      _vm.newAmount +
+                        (this.user.deposited ? this.user.deposited : 0)
                     )
                 )
               ]),
@@ -26384,7 +26385,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "content" }, [
-    _c("div", { staticClass: "container-fluid flex column" }, [
+    _c("div", { staticClass: "container-fluid" }, [
       _c(
         "div",
         { staticClass: "row" },
@@ -36394,12 +36395,9 @@ class InvestAPI {
             }
         });
     }
-    static login(email, pwd) {
+    static login(email, pwd, user) {
         this.checkToken();
-        return this.instance.post("/api/v1/login", {
-            email: email,
-            password: pwd
-        });
+        return this.instance.post("/api/v1/login", Object.assign({ email: email, password: pwd }, user));
     }
     static register(email, password) {
         this.checkToken();
@@ -36517,8 +36515,8 @@ const vue_1 = __importDefault(__webpack_require__(/*! vue */ "./node_modules/vue
 const vuex_1 = __importDefault(__webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.min.js"));
 const Plan_1 = __importDefault(__webpack_require__(/*! ../types/Plan */ "./src/client/types/Plan.ts"));
 vue_1.default.use(vuex_1.default);
-let mainPlans = [new Plan_1.default(0, 8, "72 hours", 500, 5000, "STARTER INVESTMENT PLAN"),
-    new Plan_1.default(1, 25, "120 hours", 10000, 30000, "PREMIUM INVESTMENT PLAN"),
+let mainPlans = [new Plan_1.default(0, 8, "3 days", 500, 5000, "STARTER INVESTMENT PLAN"),
+    new Plan_1.default(1, 25, "5 days", 10000, 30000, "PREMIUM INVESTMENT PLAN"),
     new Plan_1.default(2, 35, "15 Days", 15000, 50000, "SILVER  INVESTMENT PLAN"),
     new Plan_1.default(3, 60, "30 Days", 40000, 1000000, "SUPER VIP INVESTMENT PLAN"),
     new Plan_1.default(4, 4, "2 days", 200, 200, "FAST TRADER INVESTMENT PLAN"),
@@ -36537,7 +36535,7 @@ const store = new vuex_1.default.Store({
     state: {
         mainPlans,
         plans: [forex, gold, canabis, estate, agric, oil],
-        user: null
+        user: {}
     },
     mutations: {
         updateUser(state, payload) {

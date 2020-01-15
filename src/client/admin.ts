@@ -1,6 +1,7 @@
 import Vue from "vue"
 //@ts-ignore
 import App from "./admin_components/App.vue"
+import router from "./utils/adminRouter"
 import InvestAPI from "./utils/Api";
 function getMeta(metaName) {
     const metas = document.getElementsByTagName('meta');
@@ -16,6 +17,7 @@ function getMeta(metaName) {
 new Vue({
     el : "#root",
     render : h => h(App),
+    router,
     mounted () {
       this.$router.push("/home")
       InvestAPI.init(getMeta("csrf_token"))

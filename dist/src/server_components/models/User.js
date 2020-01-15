@@ -1,6 +1,6 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 //@ts-nocheck
+Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
 let schema = new mongoose_1.Schema({
     email: {
@@ -30,9 +30,14 @@ class UserData {
         if (mongooseDoc) {
             //@ts-ignore
             this.email = mongooseDoc.email;
+            //@ts-ignore
             this.isAdmin = mongooseDoc.isAdmin;
+            //@ts-ignore
             this.investment = mongooseDoc.investment;
+            //@ts-ignore
             this.deposited = mongooseDoc.depositedAmt;
+            //@ts-ignore
+            this.investedAmt = mongooseDoc.investedAmt;
         }
     }
 }

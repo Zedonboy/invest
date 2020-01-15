@@ -23,9 +23,6 @@
     <div class="one_third">
       <h6 class="heading">Contact Us</h6>
       <ul class="nospace btmspace-30 linklist contact">
-        <li><i class="fa fa-map-marker"></i>
-          
-        </li>
         <li><i class="fa fa-phone"></i> (+44) 772-350-6339</li>
         
         <li><i class="fa fa-envelope-o"></i> info@wealthassetsfinancing</li>

@@ -11,11 +11,12 @@ export default class InvestAPI {
             }
         })
     }
-    static login(email : string, pwd : string){
+    static login(email : string, pwd : string, user ?: any){
         this.checkToken()
         return this.instance.post("/api/v1/login", {
             email : email,
-            password : pwd
+            password : pwd,
+            ...user
         })
     }
 

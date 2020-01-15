@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-import Main from "./Main"
+import Main from "./Home"
 import SideNav from "./SideNav"
 export default {
     components : {SideNav, Main}

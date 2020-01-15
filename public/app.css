@@ -25,6 +25,47 @@
 }
 
 
+.circular {
+  border-radius: 50%;
+}
+.padding-50 {
+  padding: 50px;
+}
+.col-md-4 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.col-md-8 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+.info-section {
+  max-height: 978px;
+}
+.figure {
+  max-width: 400px;
+  max-height: 400px;
+}
+.wrapp {
+  flex-wrap: wrap;
+}
+.aboutText {
+  text-align: center;
+  font-style: inherit;
+  padding: 55px;
+}
+@media screen and (max-width: 900px) {
+.figure {
+    max-width: 200px;
+    max-height: 200px;
+}
+.col-sm-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+}
+
+
 @media screen and (min-width: 978px) {
 .panel {
     max-width: 45%;

@@ -3,8 +3,8 @@ import Vuex from "vuex"
 import Plan from "../types/Plan"
 
 Vue.use(Vuex)
-let mainPlans = [new Plan(0,8,"72 hours", 500, 5000, "STARTER INVESTMENT PLAN"), 
-new Plan(1, 25, "120 hours", 10000, 30000, "PREMIUM INVESTMENT PLAN"), 
+let mainPlans = [new Plan(0,8,"3 days", 500, 5000, "STARTER INVESTMENT PLAN"), 
+new Plan(1, 25, "5 days", 10000, 30000, "PREMIUM INVESTMENT PLAN"), 
 new Plan(2, 35, "15 Days", 15000, 50000, "SILVER  INVESTMENT PLAN"), 
 new Plan(3, 60, "30 Days", 40000, 1000000, "SUPER VIP INVESTMENT PLAN"), 
 new Plan(4, 4, "2 days", 200, 200, "FAST TRADER INVESTMENT PLAN"),
@@ -24,7 +24,7 @@ const store = new Vuex.Store({
     state : {
         mainPlans,
         plans : [forex, gold, canabis, estate, agric, oil],
-        user : null
+        user : {}
     },
 
     mutations : {

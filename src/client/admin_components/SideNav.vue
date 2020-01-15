@@ -25,33 +25,7 @@
             <p>Dashboard</p>
           </a>
         </router-link>
-        <router-link tag="li" to="/withdraw" active-class="active">
-          <a>
-            <i class="pe-7s-user"></i>
-            <p>Withdraw</p>
-          </a>
-        </router-link>
-
-        <router-link tag="li" to="/deposit" active-class="active">
-          <a>
-            <i class="pe-7s-note2"></i>
-            <p>Deposit</p>
-          </a>
-        </router-link>
-
-        <router-link tag="li" to="/investmentPlan" active-class="active">
-          <a>
-            <i class="pe-7s-news-paper"></i>
-            <p>Investment Plan</p>
-          </a>
-        </router-link>
-
-        <router-link tag="li" to="/verify" active-class="active">
-          <a>
-            <i class="pe-7s-science"></i>
-            <p>Verification</p>
-          </a>
-        </router-link>
+        
       </ul>
     </div>
   </div>

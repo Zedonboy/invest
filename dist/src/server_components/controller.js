@@ -114,10 +114,7 @@ function registerController(req, res) {
             utils_1.returnError(res, 409, "Credentials already exists in database");
         }
         else {
-            User_1.UserDBModel.create({
-                email: req.body.email,
-                password: req.body.password
-            }, (err, doc) => {
+            User_1.UserDBModel.create(Object.assign({}, req.body), (err, doc) => {
                 if (err) {
                     utils_1.returnError(res, 500, "Error accessing database during check whether credentials exist");
                 }

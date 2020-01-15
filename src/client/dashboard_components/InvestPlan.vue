@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="container-fluid flex column">
+    <div class="container-fluid">
       <div class="row">
         <div :key="plan.id" v-for="plan in subplans" class="col-md-4">
           <InvestCard v-on:activateplan="submitForm" :plan="plan" />

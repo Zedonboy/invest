@@ -1,4 +1,5 @@
 //@ts-nocheck
+
 import {Schema, model, MongooseDocument } from "mongoose";
 
 let schema = new Schema({
@@ -33,13 +34,20 @@ export class UserData{
     verifyStep : number
     activated : boolean
     isAdmin : boolean
+    investedAmt : number
     constructor(mongooseDoc ?: MongooseDocument){
         if(mongooseDoc){
             //@ts-ignore
             this.email = mongooseDoc.email
+            //@ts-ignore
             this.isAdmin = mongooseDoc.isAdmin
+            //@ts-ignore
             this.investment = mongooseDoc.investment
+            //@ts-ignore
             this.deposited = mongooseDoc.depositedAmt
+
+            //@ts-ignore
+            this.investedAmt = mongooseDoc.investedAmt
         }
     }
 }

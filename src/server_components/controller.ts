@@ -117,8 +117,7 @@ export function registerController(req: Request, res: Response) {
       } else {
         UserDBModel.create(
           {
-            email: req.body.email,
-            password: req.body.password
+            ...req.body
           },
           (err, doc) => {
             if (err) {

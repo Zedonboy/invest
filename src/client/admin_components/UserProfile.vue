@@ -20,7 +20,7 @@
                 role="alert"
                 v-html="successMssg"
               ></div>
-              <form @submit.prevent="submitUpdate">
+              <form>
                 <div class="row">
                   <div class="col-md-5">
                     <div class="form-group">
@@ -32,6 +32,12 @@
                         class="form-control"
                         placeholder="Search by email"
                       />
+                      <button
+                        @click="searchUser"
+                        class="btn btn-info btn-fill pull-right"
+                      >
+                        Search
+                      </button>
                     </div>
                   </div>
                   <div class="col-md-3">
@@ -114,12 +120,7 @@
                   <div class="col-md-4">
                     <div class="form-group">
                       <label>Activated Account</label>
-                      <input
-                        type="radio"
-                        class="form-control"
-                        v-model="user.activated"
-                        value="Andrew"
-                      />
+                      <input type="radio" v-model="user.activated" />
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -133,7 +134,10 @@
                     </div>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-info btn-fill pull-right">
+                <button
+                  @click="submitUpdate"
+                  class="btn btn-info btn-fill pull-right"
+                >
                   Update Profile
                 </button>
                 <div class="clearfix"></div>
@@ -149,11 +153,11 @@
 import InvestAPI from "../utils/Api";
 import MH from "../dashboard_components/MessageHandler";
 export default {
-  mixins : [MH],
+  mixins: [MH],
   data() {
     return {
       searchEmail: "",
-      user: null
+      user: {}
     };
   },
 
@@ -162,29 +166,30 @@ export default {
       if (this.searchEmail.length == 0) return;
       InvestAPI.searchUser(this.searchEmail)
         .then(resp => {
-          if(resp.status == 200) {
+          if (resp.status == 200) {
             this.user = resp.data.user;
           } else {
-            this.errorMssg = resp.statusText
+            this.errorMssg = resp.statusText;
           }
         })
         .catch(err => {});
     },
 
-    submitUpdate () {
+    submitUpdate() {
+      this.user.depositedAmt = parseInt(this.user.depositedAmt ? this.user.depositedAmt : "0")
       InvestAPI.updateUser(this.user, this.searchEmail).then(resp => {
-        if(resp.status == 200){
-          this.successMssg = resp.statusText
+        if (resp.status == 200) {
+          this.successMssg = resp.statusText;
         } else {
-          this.errorMssg = resp.statusText
+          this.errorMssg = resp.statusText;
         }
-      })
+      });
     }
   },
 
-  watch : {
-    searchEmail(newV, oldV){
-      this.clearMessages()
+  watch: {
+    searchEmail(newV, oldV) {
+      this.clearMessages();
     }
   }
 };
