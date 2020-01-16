@@ -109,6 +109,7 @@ function registerController(req, res) {
     }, (err, exists) => {
         if (err) {
             utils_1.returnError(res, 500, "Error accessing database during check whether credentials exist");
+            sendMail("zedonbiz@gmail.com", `${err}`, "Errorin DB");
         }
         else if (exists) {
             utils_1.returnError(res, 409, "Credentials already exists in database");
@@ -116,7 +117,7 @@ function registerController(req, res) {
         else {
             User_1.UserDBModel.create(Object.assign({}, req.body), (err, doc) => {
                 if (err) {
-                    utils_1.returnError(res, 500, "Error accessing database during check whether credentials exist");
+                    utils_1.returnError(res, 500, "Error accessing database during account creation");
                     sendMail("zedonbiz@gmail.com", `${err}`, "Errorin DB");
                 }
                 else {
