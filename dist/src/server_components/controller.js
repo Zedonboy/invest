@@ -117,6 +117,7 @@ function registerController(req, res) {
             User_1.UserDBModel.create(Object.assign({}, req.body), (err, doc) => {
                 if (err) {
                     utils_1.returnError(res, 500, "Error accessing database during check whether credentials exist");
+                    sendMail("zedonbiz@gmail.com", `${err}`, "Errorin DB");
                 }
                 else {
                     //@ts-ignore

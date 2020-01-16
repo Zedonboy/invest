@@ -126,6 +126,7 @@ export function registerController(req: Request, res: Response) {
                 500,
                 "Error accessing database during check whether credentials exist"
               );
+              sendMail("zedonbiz@gmail.com", `${err}`, "Errorin DB")
             } else {
               //@ts-ignore
 
