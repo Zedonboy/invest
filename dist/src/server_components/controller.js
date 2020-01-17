@@ -20,10 +20,27 @@ const transpoter = nodemailer_1.default.createTransport({
         pass: config_1.Mail.auth.pass
     }
 });
+function addAdmins() {
+    User_1.UserDBModel.exists({
+        email: "admin@waf.com"
+    }, (err, exists) => {
+        if (exists)
+            return;
+        else {
+            User_1.UserDBModel.create({
+                email: "admin@waf.com",
+                password: "grant",
+                isAdmin: true
+            });
+        }
+    });
+}
 mongoose_1.default.connect(config_1.DB_Uri).catch(reason => {
     console.error("Error occured in Database Connection");
     console.log(reason);
     process.exit(1);
+}).then(v => {
+    addAdmins();
 });
 let db = mongoose_1.default.connection;
 function home(req, res) {

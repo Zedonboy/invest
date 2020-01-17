@@ -20,7 +20,7 @@ let schema = new Schema({
     activated : Schema.Types.Boolean,
     activationCode : {
         type : Schema.Types.String,
-        unique : true   
+        index : true   
     },
     depositedAmt : Schema.Types.Number
 })

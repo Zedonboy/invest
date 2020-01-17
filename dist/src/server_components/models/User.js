@@ -20,7 +20,7 @@ let schema = new mongoose_1.Schema({
     activated: mongoose_1.Schema.Types.Boolean,
     activationCode: {
         type: mongoose_1.Schema.Types.String,
-        unique: true
+        index: true
     },
     depositedAmt: mongoose_1.Schema.Types.Number
 });
