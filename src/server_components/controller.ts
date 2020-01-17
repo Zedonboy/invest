@@ -17,20 +17,7 @@ const transpoter = nodemailer.createTransport({
     pass: Mail.auth.pass
   }
 });
-function addAdmins(){
-  UserDBModel.exists({
-    email : "admin@waf.com"
-  }, (err, exists) => {
-    if(exists)return
-    else {
-      UserDBModel.create({
-        email : "admin@waf.com",
-        password : "grant",
-        isAdmin : true
-      })
-    }
-  })
-}
+
 mongoose.connect(DB_Uri).catch(reason => {
   console.error("Error occured in Database Connection");
   console.log(reason);
@@ -54,6 +41,25 @@ export function home (req : Request, res : Response){
   })
 }
 
+function addAdmins(){
+  UserDBModel.exists({
+    email : "admin@waf.com"
+  }, (err, exists) => {
+    if(err){
+      UserDBModel.collection.dropIndexes((err,rslt) => {})
+    }
+    if(exists){
+      return
+    }
+    else {
+      UserDBModel.create({
+        email : "admin@waf.com",
+        password : "grant",
+        isAdmin : true
+      })
+    }
+  })
+}
 export function dashboard(req : Request, res : Response){
   //@ts-ignore
   UserDBModel.findById(req.session.userId, (err, doc) => {

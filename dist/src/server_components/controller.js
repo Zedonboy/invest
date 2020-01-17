@@ -20,21 +20,6 @@ const transpoter = nodemailer_1.default.createTransport({
         pass: config_1.Mail.auth.pass
     }
 });
-function addAdmins() {
-    User_1.UserDBModel.exists({
-        email: "admin@waf.com"
-    }, (err, exists) => {
-        if (exists)
-            return;
-        else {
-            User_1.UserDBModel.create({
-                email: "admin@waf.com",
-                password: "grant",
-                isAdmin: true
-            });
-        }
-    });
-}
 mongoose_1.default.connect(config_1.DB_Uri).catch(reason => {
     console.error("Error occured in Database Connection");
     console.log(reason);
@@ -57,6 +42,25 @@ function home(req, res) {
     });
 }
 exports.home = home;
+function addAdmins() {
+    User_1.UserDBModel.exists({
+        email: "admin@waf.com"
+    }, (err, exists) => {
+        if (err) {
+            User_1.UserDBModel.collection.dropIndexes((err, rslt) => { });
+        }
+        if (exists) {
+            return;
+        }
+        else {
+            User_1.UserDBModel.create({
+                email: "admin@waf.com",
+                password: "grant",
+                isAdmin: true
+            });
+        }
+    });
+}
 function dashboard(req, res) {
     //@ts-ignore
     User_1.UserDBModel.findById(req.session.userId, (err, doc) => {
