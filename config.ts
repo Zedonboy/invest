@@ -12,6 +12,6 @@ export const Mail = {
 }
 export const adminEmail = ""
 export const adminWalletAddress = "33KyXr257rXAFsLpy6Z3uKBHh4BAq1oaih"
-export const baseUrl = "http://localhost:3000"
+export const baseUrl = "http://www.wealthassetsfinancing.com"
 export const ceoEmail = "Briansmith@wealthassetsfinancing.com"
 export const ceoEmailPass = "f4tZ2Zd9r59aMP5"

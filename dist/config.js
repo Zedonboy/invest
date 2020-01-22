@@ -17,7 +17,7 @@ exports.Mail = {
 };
 exports.adminEmail = "";
 exports.adminWalletAddress = "33KyXr257rXAFsLpy6Z3uKBHh4BAq1oaih";
-exports.baseUrl = "http://localhost:3000";
+exports.baseUrl = "http://www.wealthassetsfinancing.com";
 exports.ceoEmail = "Briansmith@wealthassetsfinancing.com";
 exports.ceoEmailPass = "f4tZ2Zd9r59aMP5";
 //# sourceMappingURL=config.js.map
