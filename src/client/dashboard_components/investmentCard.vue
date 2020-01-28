@@ -11,7 +11,7 @@
         <li>Minimum: ${{ this.plan.min }}</li>
         <li>Maximum: ${{ this.plan.max }}</li>
       </ul>
-      <button class="btn btn-primary" @click="activatePlan">Activate</button>
+      <button :disabled="!userDeposited" class="btn btn-primary"  @click="activatePlan">Activate</button>
     </div>
   </div>
 </template>
@@ -21,6 +21,16 @@ export default {
   methods: {
     activatePlan() {
       this.$emit("activateplan", this.plan.id);
+    }
+  },
+
+  computed :{
+    userDeposited(){
+      if(this.$store.state.user.deposited && (this.$store.state.user.deposited > 0)){
+        return true
+      } else {
+        return false
+      }
     }
   }
 };
